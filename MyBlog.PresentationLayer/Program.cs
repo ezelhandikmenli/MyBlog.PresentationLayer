@@ -11,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 //ICategoryService gördüðünde EFCategoryDal çaðýr
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EFCategoryDal>();
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+builder.Services.AddScoped<IArticleDal, EFArticleDal>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+builder.Services.AddScoped<ISocialMediaDal, EFSocialMediaDal>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
